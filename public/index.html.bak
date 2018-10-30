@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="src/jquery-3.3.1.min.js"></script>
+<script src="src/push.js"></script>
+<script src="src/serviceWorker.min.js"></script>
+
+</head>
+<body>
+<br><br><br><br>
+<button onclick="notifyMe()">Notify me!</button>
+</body>
+<script>
+function notifyMe()
+{
+ Push.create('P2C Editor', {
+        body: 'Go Live completed for given request. \nClick here to see changes!\nRef. No.:',
+        icon: 'images/computer.png',
+      //  timeout: 4000,
+        onClick: function () {
+			window.open("http://fiat.it","_blank");
+        },
+        vibrate: [200, 100, 200, 100, 200, 100, 200]
+    });
+}
+
+
+//setTimeout(function(){ notifyMe(); }, 3000);
+</script>
+</html>
+
+
+
